@@ -2,7 +2,7 @@ const express = require('express')
 const puppeteer = require('puppeteer')
 
 const app = express()
-const port = 80
+const port = 3000
 
 app.listen(port, () => {
 	console.log('server running port 3000')
