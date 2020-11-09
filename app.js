@@ -2,7 +2,7 @@ const express = require('express')
 const puppeteer = require('puppeteer')
 
 const app = express()
-const port = 3000
+const port = 80
 
 app.listen(port, () => {
 	console.log('server running port 3000')
@@ -43,6 +43,7 @@ app.post('/', (req, res) => {
 				        elements[i].parentNode.removeChild(elements[i]);
 				    }
 				}, div_selector_to_remove1)
+
 
 				const element = await page.$('article.css-1dbjc4n.r-18u37iz.r-1ny4l3l')  
 				await element.screenshot({path: 'public/screenshots/' + imgPath + '.png'})
