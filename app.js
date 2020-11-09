@@ -55,14 +55,29 @@ app.post('/', (req, res) => {
 						<head>
 							<meta charset="UTF-8"> 
 							<title>TweetShot</title>
+							<style>
+								html, body {margin:0}
+								header {width:100%; box-shadow:0px 3px 6px rgba(0,0,0,.2); background:#fff;}
+								form {width:100%; max-width:600px; margin:auto; display:flex; padding:20px; box-sizing:border-box;}
+								input[type="text"] {width:100%; border:1px solid #000; box-sizing:border-box; padding:0 10px; margin-right:10px;}
+								input[type="submit"] {border:0; padding:10px 20px; border:1px solid #000; box-sizing:border-box; cursor:pointer;}
+								input[type="submit"]:hover {background:#888;}
+								.img-container {width:400px; margin:auto; margin-top:50px; display:flex; box-shadow:0px 3px 6px rgba(0,0,0,.2);}
+								.img-container img {max-width:100%; width:100%;}
+							</style>
 						</head>
 						<body>
-							<form name="tweetshot" action="/" method="post">
-								<input type="text" name="twurl" value="${url}">
-								
-								<input type="submit" value="Submit">
-							</form>
-							<img src="${result}">
+							<header>
+								<form name="tweetshot" action="/" method="post">
+									<input type="text" name="twurl" value="${url}">
+									<input type="submit" value="Submit">
+								</form>
+							</header>
+							<div class="img-container">
+								<a target="_blank" href="${url}">
+									<img src="${result}">
+								</a>
+							</div>
 						</body>
 					</html>`   
 
